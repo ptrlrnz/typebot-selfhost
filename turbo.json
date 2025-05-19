@@ -1,5 +1,4 @@
 {
-  "baseBranch": "origin/main",
   "pipeline": {
     "lint": {
       "outputs": []
@@ -14,18 +13,15 @@
     },
     "build": {
       "dependsOn": ["^build", "@typebot.io/prisma#db:generate"],
-      "outputs": [".next/**", "dist/**", "build/**"],
-      "outputMode": "new-only"
+      "outputs": [".next/**", "dist/**", "build/**"]
     },
     "build:docker": {
       "dependsOn": ["^build", "@typebot.io/prisma#db:generate"],
-      "outputs": [".next/**", "dist/**", "build/**"],
-      "outputMode": "new-only"
+      "outputs": [".next/**", "dist/**", "build/**"]
     },
     "docs#build": {
       "dependsOn": ["api:generate"],
-      "outputs": ["build/**"],
-      "outputMode": "new-only"
+      "outputs": ["build/**"]
     },
     "build:env": {
       "cache": false
